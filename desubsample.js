@@ -175,7 +175,7 @@
     }
   }
 
-  function JPEG(srcImage) {
+  function DesubsampledJPEG(srcImage) {
     if (window.Blob && srcImage instanceof Blob) {
       var img = new Image();
       var URL = window.URL && window.URL.createObjectURL ? window.URL :
@@ -205,7 +205,7 @@
   /**
    * Rendering megapix image into specified target element
    */
-  JPEG.prototype.renderTo = function(target, options) {
+  DesubsampledJPEG.prototype.renderTo = function(target, options) {
     if (this.imageLoadListeners) {
       var _this = this;
       this.imageLoadListeners.push(function() { _this.render(target, options) });
@@ -250,9 +250,9 @@
    * Export class to global
    */
   if (typeof define === 'function' && define.amd) {
-    define([], function() { return JPEG; }); // for AMD loader
+    define([], function() { return DesubsampleJPEG; }); // for AMD loader
   } else {
-    this.JPEG = JPEG;
+    this.DesubsampleJPEG = DesubsampleJPEG;
   }
 
 })();
