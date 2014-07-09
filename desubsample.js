@@ -250,9 +250,9 @@
    * Export class to global
    */
   if (typeof define === 'function' && define.amd) {
-    define([], function() { return DesubsampleJPEG; }); // for AMD loader
+    define([], function() { return DesubsampledJPEG; }); // for AMD loader
   } else {
-    this.DesubsampleJPEG = DesubsampleJPEG;
+    this.DesubsampledJPEG = DesubsampledJPEG;
   }
 
 })();
