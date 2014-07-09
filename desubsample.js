@@ -128,7 +128,7 @@
    * Transform canvas coordination according to specified frame size and orientation
    * Orientation value is from EXIF tag
    */
-  function transformCoordinate(canvas, ctx, width, height, orientation) {
+  function transformCoordinate(canvas, width, height, orientation) {
     switch (orientation) {
       case 5:
       case 6:
@@ -141,6 +141,7 @@
         canvas.width = width;
         canvas.height = height;
     }
+    var ctx = canvas.getContext('2d');
     switch (orientation) {
       case 2:
         // horizontal flip
