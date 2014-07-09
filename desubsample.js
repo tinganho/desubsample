@@ -1,13 +1,4 @@
-/**
- * Mega pixel image rendering library for iOS Safari
- *
- * Fixes iOS Safari's image file rendering issue for large size image (over mega-pixel),
- * which causes unexpected subsampling when drawing it in canvas.
- * By using this library, you can safely render the image with proper stretching.
- *
- * Copyright (c) 2012 Tingan Ho <tingan87@gmail.com>
- * Released under the MIT license
- */
+
 (function() {
 
   // In iOS all JPEGs will be subsampled if they are bigger than
@@ -184,11 +175,7 @@
     }
   }
 
-
-  /**
-   * MegaPixImage class
-   */
-  function MegaPixImage(srcImage) {
+  function JPEG(srcImage) {
     if (window.Blob && srcImage instanceof Blob) {
       var img = new Image();
       var URL = window.URL && window.URL.createObjectURL ? window.URL :
@@ -218,7 +205,7 @@
   /**
    * Rendering megapix image into specified target element
    */
-  MegaPixImage.prototype.render = function(target, options) {
+  JPEG.prototype.renderTo = function(target, options) {
     if (this.imageLoadListeners) {
       var _this = this;
       this.imageLoadListeners.push(function() { _this.render(target, options) });
@@ -263,9 +250,9 @@
    * Export class to global
    */
   if (typeof define === 'function' && define.amd) {
-    define([], function() { return MegaPixImage; }); // for AMD loader
+    define([], function() { return JPEG; }); // for AMD loader
   } else {
-    this.MegaPixImage = MegaPixImage;
+    this.JPEG = JPEG;
   }
 
 })();

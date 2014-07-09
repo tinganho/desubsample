@@ -1,5 +1,5 @@
 {
-    "name": "desubsample",
-    "version": "1.0.0",
+    "name": "jpeg-desubsample",
+    "version": "2.0.0",
     "main": ["desubsample.js"]
 }
