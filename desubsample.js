@@ -208,7 +208,7 @@
   DesubsampledJPEG.prototype.renderTo = function(target, options) {
     if (this.imageLoadListeners) {
       var _this = this;
-      this.imageLoadListeners.push(function() { _this.render(target, options) });
+      this.imageLoadListeners.push(function() { _this.renderTo(target, options) });
       return;
     }
     options = options || {};
