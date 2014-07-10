@@ -1,7 +1,9 @@
 desubsample
 ===============
 
-Safari subsamples JPEG pictures to 1/4 or 1/16 of the original decoded image. Subsample is a way to make mobile web browser consume less memory by just storing a part of the decoded data by scaling down. Though displaying a small part of the decoded image have some implication especially on canvas. On a canvas the image is scaled down 1/4 or 1/16. This libarary scales up the image 1/4 or 1/16 to the original size.
+Safari subsamples JPEG pictures to 1/4 or 1/16 of the original decoded image. Subsample is a way to make mobile web browser consume less memory by just storing a part of the decoded data by scaling down. Though displaying a small part of the decoded image have some implication especially on canvas. On a canvas using `drawImage()` the image is scaled down 1/4 or 1/16, and due to EXIF orientation some pictures get totally wrong rendered. 
+
+Use this libarary if you want to get rid of the problem caused by subsampling and EXIF orientation.
 
 ####Usage
 ```javascript
